@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `ERU Gatsby and Contentful Blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Shayaan Ahmed Farooqi`,
+      summary: `Perpetual Student(?) from Pakistan.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `A blog deployed to netlify with automated content from contentful.`,
+    siteUrl: `https://eru-gatsby-contentful-blog.netlify.app/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `ShayaanFarooqi`,
     },
   },
   plugins: [
@@ -60,8 +60,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `ERU Gatsby Contentful Blog`,
+        short_name: `ERU-gcb`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
