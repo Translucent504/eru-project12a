@@ -1,14 +1,16 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "eru-gatsby-contenful-blog",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "A gatsby blog with automatic content from contentful.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Shayaan Ahmed Farooqi",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/Translucent504/eru-project12a/issues"
   },
   "dependencies": {
-    "gatsby": "^2.24.79",
+    "@contentful/rich-text-react-renderer": "^14.1.1",
+    "dotenv": "^8.2.0",
+    "gatsby": "^2.24.85",
     "gatsby-image": "^2.4.21",
     "gatsby-plugin-feed": "^2.5.14",
     "gatsby-plugin-google-analytics": "^2.3.18",
@@ -21,8 +23,9 @@
     "gatsby-remark-prismjs": "^3.5.16",
     "gatsby-remark-responsive-iframe": "^2.4.17",
     "gatsby-remark-smartypants": "^2.3.13",
+    "gatsby-source-contentful": "^3.0.3",
     "gatsby-source-filesystem": "^2.3.34",
-    "gatsby-transformer-remark": "^2.8.41",
+    "gatsby-transformer-remark": "^2.8.46",
     "gatsby-transformer-sharp": "^2.5.17",
     "prismjs": "^1.22.0",
     "react": "^16.12.0",
@@ -34,7 +37,7 @@
   "devDependencies": {
     "prettier": "2.1.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://eru-gatsby-contentful-blog.netlify.app/",
   "keywords": [
     "gatsby"
   ],
@@ -42,7 +45,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/Translucent504/eru-project12a.git"
   },
   "scripts": {
     "build": "gatsby build",

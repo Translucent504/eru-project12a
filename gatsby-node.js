@@ -6,8 +6,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Define a template for blog post
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
-
+  const contentfulBlogPost = path.resolve(`./src/templates/contentful-blog-post.js`)
   // Get all markdown blog posts sorted by date
+  const contentfulResult = await graphql(`
+  {
+    allContentfulBlogPost(sort: {fields: publicationDate, order: DESC}) {
+      nodes {
+        slug
+        id
+      }
+    }
+  }`)
   const result = await graphql(
     `
       {
@@ -26,19 +35,32 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
   )
 
-  if (result.errors) {
+  if (contentfulResult.errors ) {
     reporter.panicOnBuild(
       `There was an error loading your blog posts`,
-      result.errors
+      contentfulResult.errors
     )
     return
   }
 
+  const contentfulPosts = contentfulResult.data.allContentfulBlogPost.nodes
   const posts = result.data.allMarkdownRemark.nodes
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
+  if(contentfulPosts.length > 0) {
+    contentfulPosts.forEach((post, index) => {
+      createPage({
+        path:`blogs/${post.slug}`,
+        component: contentfulBlogPost,
+        context: {
+          id: post.id
+        }
+      })
+    })
+  }
+
 
   if (posts.length > 0) {
     posts.forEach((post, index) => {
